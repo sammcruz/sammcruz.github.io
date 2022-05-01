@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    color: #220a0a;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url(./pexels-berend-de-kort-1452701.jpg);
+    background: center center fixed cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    text-shadow: 1px 1px whitesmoke;
+    font-weight: bold;
+}
+
+header div img {
+    max-width: 120px;
+    padding: 5px;
+    margin: 10px;
+}
+head ul {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+}
+.container {
+    text-align: center;
+}
+
+.container .name h1{
+    font-size: 50px;
+    text-shadow: 2px 2px whitesmoke;
+}
+
+.container .name h5{
+    font-size: 30px;
+}
+
+#about p{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form {
+    width: 40%;
+    margin: 30px auto;
+}
+
+form input {
+    width: 50%;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    color: navy;
+}
+
+.flex div {
+    /* border: 1px solid black; */
+    margin: 15px;
+    padding: 10px;
+    background-color: gainsboro;
+    /* opacity: .4; */
+}
+
+.projet h2{
+    font-weight:bolder;
+    padding: 5px;
+}
+
+.flex img {
+    max-width: 200px;
+}
