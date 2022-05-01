@@ -31,15 +31,25 @@ header {
 }
 
 header div img {
-    max-width: 120px;
+    max-width: 100px;
     padding: 5px;
     margin: 10px;
 }
-head ul {
+header ul {
     display: flex;
     font-size: 20px;
     align-items: center;
 }
+
+header ul li {
+    padding: 5px;
+}
+
+
+header ul li a:hover {
+    color: aqua;
+}
+
 .container {
     text-align: center;
 }
@@ -51,6 +61,31 @@ head ul {
 
 .container .name h5{
     font-size: 30px;
+}
+
+#arrow i{
+    font-size: 30px;
+    cursor: pointer;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+#animation {
+    transition: 300ms;
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+
+.active {
+    display: block !important;
 }
 
 #about p{
@@ -65,6 +100,31 @@ head ul {
 
 form input {
     width: 50%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+}
+
+form button {
+    width: 15%;
+    min-width: 60px;
+    padding: 5px 10px;
+    background: linear-gradient(to right, #c09717 50%, #9c551b 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #FFF;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+    text-align: center;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -5px;
+}
+
+form button:hover {
+    background-position: left bottom;
+    color: #FFF;
 }
 
 .flex {
@@ -74,13 +134,15 @@ form input {
 }
 
 .flex div {
-    /* border: 1px solid black; */
     margin: 15px;
     padding: 10px;
     background-color: gainsboro;
-    /* opacity: .4; */
+    transition: 800ms;
 }
 
+.flex div:hover {
+    background-color:blanchedalmond;
+}
 .projet h2{
     font-weight:bolder;
     padding: 5px;
@@ -88,4 +150,24 @@ form input {
 
 .flex img {
     max-width: 200px;
+}
+
+@media only screen and (max-width: 800px) {
+    .form {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container .name h1 {
+        font-size: 20px;
+    }
+
+    .container .name h5 {
+        font-size: 15px;
+    }
+    #about p{
+        max-width: 80%;
+        text-align: justify;
+    }
 }

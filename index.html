@@ -39,11 +39,11 @@
                 <h5>Data Scientist</h5>
             </div>
 
-            <div id="arrow">
-                <i class="fa-solid fa-angles-down"></i>
+            <div onclick=displayAbout() id="arrow">
+                <i id="animation" class="fa-solid fa-angles-down"></i>
             </div>
 
-            <div id="about">
+            <div style="display:none" id="about">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo facere qui recusandae mollitia fugiat
                     exercitationem soluta repellat cumque, cum nemo rerum. A velit corrupti, ducimus, hic possimus blanditiis
@@ -95,5 +95,13 @@
 
         </section>
     </main>
+    <script>
+        function displayAbout(){
+            var arrow = document.getElementById('animation');
+            arrow.classList.toggle('rotate')
+            var display = document.getElementById('about');
+            display.classList.toggle('active')
+        }
+    </script>
 </body>
 </html>
