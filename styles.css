@@ -15,7 +15,7 @@ a {
 }
 
 body {
-    background-image: url(./pexels-berend-de-kort-1452701.jpg);
+    background-image: url(./pexels-johann-piber-695657.jpg);
     background: center center fixed cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -91,6 +91,8 @@ header ul li a:hover {
 #about p{
     max-width: 600px;
     margin: 0 auto;
+    font-weight: bolder;
+    font-size: larger;
 }
 
 .form {
