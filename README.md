@@ -154,7 +154,7 @@ você já pode montar seu portifólio e compartilhar com seus amigos.</font></fo
 <font face="Monaco, Menlo">
 	Dica: crie uma QR com um link que leva para sua página web usando o 
 </font></font>
-<font color="#c7254e"><font face="Monaco, Menlo"><u><a src="https://qr.io/"> qr.io.</a></u>
+<font color="#c7254e"><font face="Monaco, Menlo"><u><a href="https://qr.io/"> qr.io.</a></u>
 </font></font></font></font>
 </p>
 
