@@ -1,17 +1,49 @@
 let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const alphabet = document.getElementById('alphabet');
 const passwordBoard = [
-  'L’habit ne fait pas le moine',
-  'Quand on parle du loup, on en voit la queue',
-  'Au royaume des aveugles, le borgne est roi',
-  'Il est passé beaucoup d’eau sous le pont',
-  'Sauve qui peut',
-  'Elle a trouvé l’oiseau rare',
-  'Ça coûte les yeux de la tête',
-  'Cela va de soi',
-  'L’occasion fait le larron',
-  'Mieux vaut commencer par balayer devant sa porte',
-  'On attrape plus de mouches avec du miel qu’avec du vinaigre',
+  'voir midi à sa porte',
+  'soupe au lait',
+  'coeur d’artichaut',
+  'pédé comme un phoque',
+  'fleur bleue',
+  'tomber de Charybde en Scylla',
+  'tailler une pipe',
+  'peigner la girafe',
+  'enculer des mouches',
+  'être au taquet',
+  'à bon entendeur, salut',
+  'un de ces quatre',
+  'ne pas être sorti de l’auberge',
+  'aller à vau-l’eau',
+  'tomber dans les pommes',
+  'haut les coeurs !',
+  'les doigts dans le nez',
+  'pisser dans un violon',
+  'par monts et par vaux',
+  'toucher du bois',
+  'Gros-Jean comme devant',
+  'bon vent',
+  'poser un lapin',
+  'se cogner le petit juif',
+  'l’habit ne fait pas le moine',
+  'une madeleine de Proust',
+  'prendre son pied',
+  'tomber des nues',
+  'tête de linotte',
+  'bayer aux corneilles',
+  'cucul la praline',
+  'froid de canard',
+  'l’Arlésienne',
+  'ouvrir la boîte de Pandore',
+  'tirer le diable par la queue',
+  'dindon de la farce',
+  'franchir le Rubicon',
+  'au diable Vauvert',
+  'dès potron-minet',
+  'tremper son biscuit',
+  'la quille',
+  'il y a anguille sous roche',
+  'à l’article de la mort',
 ];
 const passwordDiv = document.querySelector('#board');
 const imgDiv = document.querySelector('#hangin-dude');
@@ -29,6 +61,11 @@ const start = function () {
     const html = `<div class="letter">${letter}</div>`;
     alphabet.insertAdjacentHTML('beforeend', html);
   });
+
+  let hint = 'HINT';
+  const html = `<div class="hintButton">${hint}</div>`;
+  alphabet.insertAdjacentHTML('beforeend', html);
+
   showPassword();
   showHangman(fail);
 };
@@ -38,6 +75,7 @@ const passwordDashed = password.split('').map(letter => {
   if (letter === ' ') return ' ';
   else if (letter === '’') return '’';
   else if (letter === ',') return ',';
+  else if (letter === '-') return '-';
   else return '_';
 });
 const showPassword = function () {
@@ -48,6 +86,31 @@ const showHangman = function (nr) {
 };
 
 const checkForLetter = function (e) {
+
+  if (e.target.classList.contains('hintButton')) {
+
+    let letra = letters[Math.floor(Math.random() * 26)];
+    while (passwordDashed.includes(letra) || !password.toUpperCase().split('').includes(letra)) {
+      letra = letters[Math.floor(Math.random() * 26)];
+    } 
+    yes.play();
+    password
+      .toUpperCase()
+      .split('')
+      .forEach((letter, i, arr) => {
+        if (letter === letra) {
+          passwordDashed[i] = letter;
+          showPassword();
+        }
+      });
+    deactivateLetter(true, e.target);
+    if (password.toUpperCase() === passwordDashed.join('')) {
+      finish(true);
+    }
+
+  }
+
+
   if (e.target.classList.contains('letter')) {
     if (password.toUpperCase().split('').includes(e.target.textContent)) {
       yes.play();
@@ -76,7 +139,9 @@ const checkForLetter = function (e) {
     }
   }
 };
+
 alphabet.addEventListener('click', checkForLetter);
+
 const deactivateLetter = function (hit, letter, audio) {
   letter.style.border = hit
     ? '1px solid rgb(50, 177, 149)'
@@ -105,14 +170,14 @@ const finish = function (succes) {
 
 const timer = function () {
   const timer = document.querySelector('#timer');
-  let time = new Date(60000);
+  let time = new Date(181000);
   const options = {
     minute: '2-digit',
     second: '2-digit',
   };
   const tick = function () {
     time -= 1000;
-    timer.textContent = Intl.DateTimeFormat('en-US', options).format(time);
+    timer.textContent = Intl.DateTimeFormat('pt-BR', options).format(time);
     if (time == 0) {
       finish(false);
       clearInterval(countDown);
