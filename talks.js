@@ -60,6 +60,74 @@
     return c;
   }
 
+  // One tab per year, newest on the left. Keyboard: arrows, Home, End.
+  function renderTabs(past, base, resBase) {
+    var byYear = {};
+    past.forEach(function (e) {
+      var y = parse(e.date).getUTCFullYear();
+      (byYear[y] = byYear[y] || []).push(e);
+    });
+    var years = Object.keys(byYear).map(Number).sort(function (a, b) { return b - a; });
+    if (!years.length) return;
+
+    var tablist = el("div", "tabs");
+    tablist.setAttribute("role", "tablist");
+    tablist.setAttribute("aria-label", "Past events by year");
+    pastEl.appendChild(tablist);
+
+    var tabs = [], panels = [];
+    years.forEach(function (y) {
+      var tab = el("button", "tab");
+      tab.type = "button";
+      tab.id = "tab-" + y;
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", "panel-" + y);
+      tab.appendChild(document.createTextNode(String(y)));
+      tab.appendChild(el("span", "tab-count", String(byYear[y].length)));
+      tablist.appendChild(tab);
+
+      var panel = el("div", "tabpanel");
+      panel.id = "panel-" + y;
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", tab.id);
+      panel.tabIndex = 0;
+      byYear[y].forEach(function (e) { panel.appendChild(card(e, base, resBase)); });
+      pastEl.appendChild(panel);
+
+      tabs.push(tab);
+      panels.push(panel);
+    });
+
+    function select(i, focus) {
+      tabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        panels[j].hidden = !on;
+      });
+      if (focus) tabs[i].focus();
+      try { history.replaceState(null, "", "#year-" + years[i]); } catch (err) { /* ignore */ }
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { select(i, false); });
+      t.addEventListener("keydown", function (ev) {
+        var n = tabs.length, next = null;
+        if (ev.key === "ArrowRight") next = (i + 1) % n;
+        else if (ev.key === "ArrowLeft") next = (i - 1 + n) % n;
+        else if (ev.key === "Home") next = 0;
+        else if (ev.key === "End") next = n - 1;
+        if (next !== null) { ev.preventDefault(); select(next, true); }
+      });
+    });
+
+    // Open the year in the URL (#year-2025) if present, otherwise the newest year.
+    var m = /^#year-(\d{4})$/.exec(location.hash);
+    var start = m ? years.indexOf(Number(m[1])) : 0;
+    select(start < 0 ? 0 : start, false);
+    if (m && start >= 0) tablist.scrollIntoView({ block: "start" });
+  }
+
   function render(data) {
     var base = data.slides_base || "";
     var resBase = data.resources_base || "";
@@ -77,14 +145,7 @@
       upcomingEl.appendChild(el("p", "empty", "No events announced right now. Want me at yours? Get in touch below."));
     }
 
-    if (pastEl) {
-      var year = null;
-      past.forEach(function (e) {
-        var y = parse(e.date).getUTCFullYear();
-        if (y !== year) { year = y; pastEl.appendChild(el("h3", "year", String(y))); }
-        pastEl.appendChild(card(e, base, resBase));
-      });
-    }
+    if (pastEl) renderTabs(past, base, resBase);
 
     if (statsEl) {
       var cities = {};
