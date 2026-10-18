@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jobradar case study · Samantha Cruz</title>
+  <meta name="description" content="Case study: a local-first AI data pipeline with Delta Lake, OpenLineage, data contracts and lineage-driven GDPR erasure.">
+  <meta property="og:title" content="jobradar: an AI data pipeline you can audit">
+  <meta property="og:description" content="A local-first AI data pipeline with Delta Lake, OpenLineage, data contracts and lineage-driven erasure.">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Samantha Cruz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects">All projects</a>
+        <a href="https://github.com/sammcruz/traceable-jobradar-poc">GitHub repo</a>
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <p class="crumbs"><a href="../index.html#projects">← Projects</a></p>
+
+      <div class="hero" style="padding-top:28px">
+        <p class="eyebrow">Case study · open source</p>
+        <h1>jobradar: an AI data pipeline you can audit</h1>
+        <p class="lead">A pipeline that runs on a laptop, uses local models, and can prove where every piece of data came from and how to delete it. Built as the demo for my talk <em>"Who Owns Your AI Data Pipeline?"</em> (SFSCON 2026).</p>
+        <div class="cta">
+          <a class="btn" href="https://github.com/sammcruz/traceable-jobradar-poc">View the code</a>
+        </div>
+        <p class="diagram-note" style="margin-top:18px">Proof of concept, not a production job tool, and not affiliated with Arbeitnow or the Bundesagentur für Arbeit.</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap prose">
+        <h2>The problem</h2>
+        <p>AI steps are creeping into data pipelines: classification, extraction, matching. Each one raises the same questions that governance teams ask about any pipeline, and a few new ones. Which model produced this value? Which prompt version? Did the data leave our environment? Can we delete everything derived from one person's data, and prove we did?</p>
+        <p>Most demos skip these questions. I wanted a small, honest system where the answers are part of the design.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>How it works</h2>
+        <p class="section-sub">Job ads come in from public APIs, get scrubbed and enriched with local models, and are matched against a CV that stays on the machine. A lineage event is emitted at every step.</p>
+        <div class="diagram">
+          <svg viewBox="0 0 900 360" role="img" aria-labelledby="dt dd" xmlns="http://www.w3.org/2000/svg">
+            <title id="dt">jobradar architecture</title>
+            <desc id="dd">Job APIs feed bronze, silver and enrich layers into gold tables and vectors. A CV becomes a private profile that is matched against ads. A lineage layer records every step.</desc>
+            <defs>
+              <marker id="head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z"/></marker>
+            </defs>
+
+            <rect class="box" x="20" y="35" width="160" height="100" rx="10"/>
+            <text x="100" y="78" text-anchor="middle" font-weight="600">Public job APIs</text>
+            <text class="sub" x="100" y="97" text-anchor="middle">Arbeitnow · BA</text>
+            <text class="sub" x="100" y="112" text-anchor="middle">JobTech · Adzuna</text>
+
+            <rect class="box" x="225" y="55" width="120" height="60" rx="10"/>
+            <text x="285" y="82" text-anchor="middle" font-weight="600">bronze</text>
+            <text class="sub" x="285" y="99" text-anchor="middle">scrubbed raw JSON</text>
+
+            <rect class="box" x="390" y="55" width="120" height="60" rx="10"/>
+            <text x="450" y="82" text-anchor="middle" font-weight="600">silver.jobs</text>
+            <text class="sub" x="450" y="99" text-anchor="middle">contacts removed</text>
+
+            <rect class="box accent" x="545" y="55" width="150" height="60" rx="10"/>
+            <text x="620" y="82" text-anchor="middle" font-weight="600">enrich</text>
+            <text class="sub" x="620" y="99" text-anchor="middle">rules · embeddings · LLM</text>
+
+            <rect class="box" x="730" y="28" width="150" height="46" rx="10"/>
+            <text x="805" y="56" text-anchor="middle" font-weight="600">gold.jobs_enriched</text>
+            <rect class="box" x="730" y="92" width="150" height="46" rx="10"/>
+            <text x="805" y="120" text-anchor="middle" font-weight="600">Lance vectors</text>
+
+            <rect class="box" x="20" y="195" width="160" height="60" rx="10"/>
+            <text x="100" y="222" text-anchor="middle" font-weight="600">Your CV (PDF)</text>
+            <text class="sub" x="100" y="239" text-anchor="middle">stays on your machine</text>
+
+            <rect class="box" x="225" y="195" width="180" height="60" rx="10"/>
+            <text x="315" y="222" text-anchor="middle" font-weight="600">Docling → profile</text>
+            <text class="sub" x="315" y="239" text-anchor="middle">no name or contact data</text>
+
+            <rect class="box accent" x="545" y="195" width="150" height="60" rx="10"/>
+            <text x="620" y="222" text-anchor="middle" font-weight="600">match</text>
+            <text class="sub" x="620" y="239" text-anchor="middle">similarity + LLM rerank</text>
+
+            <rect class="box" x="730" y="202" width="150" height="46" rx="10"/>
+            <text x="805" y="230" text-anchor="middle" font-weight="600">gold.matches</text>
+
+            <path class="arrow" d="M180 85 H225"/>
+            <path class="arrow" d="M345 85 H390"/>
+            <path class="arrow" d="M510 85 H545"/>
+            <path class="arrow" d="M695 72 L730 54"/>
+            <path class="arrow" d="M695 98 L730 114"/>
+            <path class="arrow" d="M180 225 H225"/>
+            <path class="arrow" d="M405 225 H545"/>
+            <path class="arrow" d="M805 138 V165 H620 V195"/>
+            <path class="arrow" d="M695 225 H730"/>
+
+            <rect class="box lineage" x="20" y="290" width="860" height="54" rx="10"/>
+            <text x="450" y="313" text-anchor="middle" font-weight="600">OpenLineage event on every step</text>
+            <text class="sub" x="450" y="331" text-anchor="middle">dataset versions · model · prompt version · CV hash · source terms → events.jsonl · Marquez UI · Delta table you own</text>
+          </svg>
+        </div>
+        <p class="diagram-note">Retention deletes ads older than 7 days from every table and the vector store. Erasure follows the lineage log from your CV hash to everything derived from it.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Design decisions</h2>
+        <p class="section-sub">Each governance idea has a concrete place in the code, so it can be inspected rather than trusted.</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Idea</th><th>How it is implemented</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Open formats, no lock-in</strong></td><td>Plain Delta tables (delta-rs) and Lance vectors. <code>jobradar exit-test</code> reads every table with DuckDB's own Delta reader.</td></tr>
+              <tr><td><strong>Lineage past the model</strong></td><td>OpenLineage events for ingest, enrich, CV load, match, retention and erasure, with table versions and custom facets for model, prompt version and CV hash.</td></tr>
+              <tr><td><strong>Swappable model</strong></td><td>Any OpenAI-compatible endpoint, chosen by environment variables. Every output records which model produced it.</td></tr>
+              <tr><td><strong>Sovereignty</strong></td><td>Defaults run locally with Ollama. Lineage flags <code>runs_locally</code> for every model call, so a hosted endpoint is visible in the record.</td></tr>
+              <tr><td><strong>Data contracts</strong></td><td>ODCS v3 contracts, checked in CI.</td></tr>
+              <tr><td><strong>GDPR in the pipeline</strong></td><td>Contact data scrubbed at ingest, 7-day retention with vacuum, and <code>jobradar erase</code>, which finds everything derived from your CV by following lineage and vacuums Delta files so time travel cannot restore it.</td></tr>
+              <tr><td><strong>Explainable extraction</strong></td><td><code>field_sources</code> records whether each value came from the source API, a rule, embeddings or the LLM.</td></tr>
+              <tr><td><strong>Terms travel with the data</strong></td><td>Each source's licence and attribution requirement is recorded on its lineage input and on every silver row.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap prose">
+        <h2>What I would call out</h2>
+        <ul>
+          <li><strong>Honest by construction.</strong> The tailored CV and cover letter feature keeps a bullet only if it appears in your CV word for word. The model chooses and orders; it does not invent. Claims the CV does not support are flagged, and skills the ad wants but you lack are listed, not claimed.</li>
+          <li><strong>Privacy by default.</strong> The CV becomes a profile without name or contact details, and lineage stores only its hash.</li>
+          <li><strong>Local first.</strong> The Apply page refuses to generate if the model endpoint is not on the same machine.</li>
+        </ul>
+        <div class="callout"><strong>Known limitations.</strong> Extraction rules are tuned for German and English ads, and the LLM fills gaps but can be wrong, which is why <code>field_sources</code> exists. Redaction is pattern-based and can miss unusual formats. There is no authentication; the web page is meant for localhost.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap prose">
+        <h2>Stack</h2>
+        <ul class="chips" aria-label="Technologies">
+          <li>Python 3.11+</li><li>delta-rs</li><li>DuckDB</li><li>LanceDB</li><li>OpenLineage + Marquez</li><li>Docling</li><li>Ollama</li><li>Qwen3 8B</li><li>BGE-M3</li><li>Streamlit</li><li>ODCS v3</li><li>Apache 2.0</li>
+        </ul>
+        <p><a class="btn" href="https://github.com/sammcruz/traceable-jobradar-poc">View on GitHub</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Samantha Cruz</span>
+      <a href="../index.html">Back to home</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

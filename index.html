@@ -1,106 +1,200 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/03c9ae5484.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Samantha Cruz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samantha Cruz · Data Engineering Team Lead</title>
+  <meta name="description" content="Samantha Cruz is a data engineering team lead in Barcelona building lakehouse platforms on Microsoft Fabric, Databricks and Azure, with governance, lineage and CI/CD built in.">
+  <meta property="og:title" content="Samantha Cruz · Data Engineering Team Lead">
+  <meta property="og:description" content="Lakehouse platforms on Microsoft Fabric, Databricks and Azure, with governance and lineage built in.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sammcruz.github.io/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img src="./sci.png" alt="Logo Samantha Cruz">
-        </div>
-        <ul>
-            <li>
-                <a href="https://github.com/sammcruz">Github</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/samanthacruz-oceanengineer/">LinkedIn</a>
-                
-            </li>
-            <li>
-                <a href="mailto:samantha@poli.ufrj.br">email</a>
-                
-            </li>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">Samantha Cruz</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#talks">Talks</a>
+        <a href="#writing">Writing</a>
+        <a href="#background">Background</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap hero" id="top">
+      <p class="eyebrow">Data Engineering Team Lead · Barcelona</p>
+      <h1>Data platforms you can trust, and explain.</h1>
+      <p class="lead">I lead a data engineering team designing lakehouse platforms on Microsoft Fabric, Databricks and Azure. Pipelines, quality checks, lineage and CI/CD, built so the people downstream can rely on them.</p>
+      <div class="cta">
+        <a class="btn" href="projects/jobradar.html">See my flagship project</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+      <ul class="facts">
+        <li><strong>8+ years</strong> in data</li>
+        <li><strong>Fabric · Databricks · Azure</strong></li>
+        <li><strong>Speaker</strong> and Databricks instructor</li>
+        <li><strong>PT · EN · ES</strong></li>
+      </ul>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>What I do</h2>
+        <p class="section-sub">End-to-end data engineering, from ingestion to the dashboards and models people actually use.</p>
+        <div class="grid three">
+          <article class="card">
+            <span class="tag">Platforms</span>
+            <h3>Lakehouse architecture</h3>
+            <p>Medallion lakehouses with PySpark and SQL on Fabric and Databricks, batch and streaming, from raw ingestion to curated, analytics-ready layers.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Trust</span>
+            <h3>Quality, lineage and governance</h3>
+            <p>Data quality monitoring, lineage tracking, row-level security and cost control, so downstream data scientists and BI analysts work on a foundation they can defend.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Delivery</span>
+            <h3>CI/CD and infrastructure as code</h3>
+            <p>Azure DevOps and Terraform pipelines, version-controlled deployments across dev, test and prod, automated tests and release gates.</p>
+          </article>
+        </div>
+
+        <div class="grid two" style="margin-top:16px">
+          <article class="card">
+            <span class="tag">Migration</span>
+            <h3>Snowflake to Azure Databricks</h3>
+            <p>Led the cost analysis of both platforms and the migration, with Azure Data Factory orchestration, ADLS storage and an executive dashboard tracking warehouse spend.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Reliability</span>
+            <h3>Quality monitoring at 4 billion events a month</h3>
+            <p>Built the monitoring system and dashboard, with near real-time Slack alerts when event propagation failed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <p class="section-sub">Open-source work you can read and run. Client work stays with the client, so this is where I build in the open.</p>
+
+        <article class="featured">
+          <span class="tag" style="color:var(--accent);font-weight:600;font-size:.85rem">Flagship · open source</span>
+          <h3>jobradar: an AI data pipeline you can audit</h3>
+          <p>A small pipeline that runs on a laptop. It collects job ads from public European APIs, uses local models to classify them and extract facts, and matches them against your CV, which never leaves your machine. Every step emits OpenLineage events, every table is plain Delta Lake, and governance (data contracts, retention, privacy scrubbing, lineage-driven erasure) is built in rather than bolted on.</p>
+          <ul class="chips" aria-label="Technologies">
+            <li>Delta Lake</li><li>OpenLineage</li><li>Marquez</li><li>DuckDB</li><li>LanceDB</li><li>Ollama</li><li>ODCS data contracts</li><li>Python</li>
+          </ul>
+          <div class="cta">
+            <a class="btn" href="projects/jobradar.html">Read the case study</a>
+            <a class="btn ghost" href="https://github.com/sammcruz/traceable-jobradar-poc">View on GitHub</a>
+          </div>
+        </article>
+
+        <div class="grid two" style="margin-top:16px">
+          <article class="card">
+            <span class="tag">Earth observation</span>
+            <h3><a href="https://github.com/sammcruz/Satellite_Imagery_Analysis">Satellite imagery analysis</a></h3>
+            <p>Scripts to acquire and process satellite image data, from my oceanography research background.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Ocean data</span>
+            <h3><a href="https://github.com/sammcruz/Download_Thredds_Python">THREDDS downloader</a></h3>
+            <p>A Python tool to pull ocean and atmospheric model data from THREDDS servers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks">
+      <div class="wrap">
+        <h2>Talks and teaching</h2>
+        <ul class="list">
+          <li><span><strong>Data Saturdays Sofia 2026</strong><br><span class="meta">Fabric data agents: what is in preview, what is coming, with a live demo</span></span><span class="meta">Sofia, 2026</span></li>
+          <li><span><strong>SFSCON 2026</strong><br><span class="meta">"Who Owns Your AI Data Pipeline?" (the jobradar demo accompanies it)</span></span><span class="meta">2026</span></li>
+          <li><span><strong>Databricks instructor</strong><br><span class="meta">Courses on data analysis, data warehousing, dashboards, Unity Catalog governance, generative AI and Delta Lake</span></span><span class="meta">2024 – today</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="wrap">
+        <h2>Writing</h2>
+        <p class="section-sub">Practical write-ups on <a href="https://sammcruz.medium.com/">Medium</a>, and short news notes on <a href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>.</p>
+        <ul class="list">
+          <li><a href="https://sammcruz.medium.com/fabric-policies-a-practical-guide-to-granular-governance-in-microsoft-fabric-388e6655c91c">Fabric Policies: A Practical Guide to Granular Governance in Microsoft Fabric</a><span class="meta">Oct 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/slowly-changing-dimensions-a-complete-guide-to-all-8-types-with-examples-285e36c6bc16">Slowly Changing Dimensions: A Complete Guide to All 8 Types</a><span class="meta">Jun 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/8-ways-to-make-your-github-copilot-credits-count-5cf95b439e8d">8 Ways to Make Your GitHub Copilot Credits Count</a><span class="meta">Jun 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/microsoft-fabric-data-days-70cdb0076763">Microsoft Fabric Data Days</a><span class="meta">Nov 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/key-metrics-to-evaluate-llms-a9f4eb19f159">Key Metrics to Evaluate LLMs</a><span class="meta">May 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/sql-vs-pyspark-performance-comparison-in-databricks-216f5040e052">SQL vs PySpark: Performance Comparison in Databricks</a><span class="meta">Mar 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/building-multi-stage-ai-systems-with-databricks-e3170190f39c">Building Multi-Stage AI Systems with Databricks</a><span class="meta">Feb 2025</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap">
+        <h2>Background</h2>
+        <p class="section-sub">I started as an oceanographic engineer working with satellite and ocean data, then moved through analytics and BI into data engineering.</p>
+        <ul class="timeline">
+          <li><span class="when">2025 – today</span><span><b>isolutions · Data Engineering Team Lead</b><span class="what">Senior Data Engineer from Jan 2025, team lead since Jan 2026. Fabric and Azure DevOps platforms for enterprise customers.</span></span></li>
+          <li><span class="when">2024 – today</span><span><b>Databricks · Instructor</b><span class="what">Remote teaching on analysis, warehousing, governance and generative AI.</span></span></li>
+          <li><span class="when">2024</span><span><b>Glovo · Senior Analytics Engineer</b><span class="what">Core Customer Data: catalog and customer experience, A/B testing, Looker dashboards.</span></span></li>
+          <li><span class="when">2022 – 2024</span><span><b>AB InBev · Senior Data Analyst</b><span class="what">Snowflake to Databricks migration, data quality monitoring, Power BI.</span></span></li>
+          <li><span class="when">2020 – 2022</span><span><b>APCOA · Senior Power BI Engineer</b><span class="what">BI solutions, SQL Server migration, enterprise data architecture.</span></span></li>
+          <li><span class="when">2017 – 2020</span><span><b>NOAA visitor and UFRJ research</b><span class="what">Real-time data transmission for forecast models, ocean-current analysis, research data management.</span></span></li>
         </ul>
 
-    </header>
-    <main>
-        <section class="container">
-            
-            <div class="name">
-                <h1>Samantha Cruz</h1>
-                <h5>Data Scientist</h5>
-            </div>
+        <div class="grid two" style="margin-top:28px">
+          <article class="card">
+            <h3>Certifications</h3>
+            <p>Microsoft Fabric Data Engineer Associate (DP-700)<br>
+               Microsoft Fabric Analytics Engineer Associate (DP-600)<br>
+               Databricks Generative AI Engineer Associate<br>
+               Databricks Data Engineer Associate</p>
+          </article>
+          <article class="card">
+            <h3>Education</h3>
+            <p>Graduate degree in Business Intelligence, Big Data and Analytics, Anhanguera University<br>
+               BSc in Oceanic Engineering, Polytechnic School of UFRJ</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <div onclick=displayAbout() id="arrow">
-                <i id="animation" class="fa-solid fa-angles-down"></i>
-            </div>
+    <section id="contact">
+      <div class="wrap">
+        <h2>Get in touch</h2>
+        <p class="section-sub">Happy to talk about data strategy, architecture, Fabric or Databricks, speaking, or mentoring.</p>
+        <div class="cta">
+          <a class="btn" href="mailto:samantha@poli.ufrj.br">Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/sammcruz">GitHub</a>
+          <a class="btn ghost" href="https://sammcruz.medium.com/">Medium</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <div style="display:none" id="about">
-                <p>
-                    ↦ Engenheira com 4 anos de experiência com análise e visualização de dados. Tenho vasta experiência nas linguagens Python e Matlab. Conhecimentos em Power BI, Tableau, AWS, QGis, SQL. Vivência com metodologias ágeis: Scrum, Trello e Slack.
-                    <br>↦ Trabalho atualmente como analista de dados contratada pela Universidade Federal do Rio de Janeiro para atuar no Laboratório de Oceanografia Física, ligado ao Instituto de Geosciências, sob supervisão do Prof Mauro Cirano, PhD.
-                    <br>↦ Formada em Engenheira Naval e Oceânica pela Escola Politécnica da UFRJ. Especialista em ciência de dados pela faculdade Anhanguera. Estou atualmente no segundo ano do Mestrado no Programa de Pós Graduação em Meteorologia da UFRJ.
-                </p>
-            </div>
-            
-            <div class="form">
-                <div>
-                    <p>deixe seu contato!</p>
-                </div>
-                <form action="">
-                    <input type="text" placeholder="seu email aqui :)">
-                    <button>enviar!</button>
-                </form>
-            </div>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Samantha Cruz</span>
+      <span>Built with plain HTML and CSS. Hosted on GitHub Pages.</span>
+    </div>
+  </footer>
 
-            <div class="projet">
-                <h2>
-                    <p>PROJETOS</p>
-                </h2>
-            </div>
-
-
-            <div class="flex">
-                <a href="hangman/index.html">
-                <div>
-                    <img src="./proj1.png" alt="">
-                    <h3>Jogo da forca em Francês</h3>
-                    <p>Esse jogo da forca usa frases, expressões e provérbios em francês que ajuda na memorização e aprendizado das palavras</p>
-                 </div></a>
-                <div>
-                    <img src="./proj2.jpg" alt="">
-                    <h3>PROJETO 2</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quae nobis alias autem ex corrupti, repellat deserunt?
-                        Nihil nam culpa sunt, repellat consectetur deserunt?</p>
-                </div>
-                <div>
-                    <img src="./proj3.png" alt="">
-                    <h3>PROJETO 3</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Quae nobis alias autem ex corrupti, repellat deserunt?
-                        Nihil nam culpa sunt, repellat consectetur deserunt?</p>
-                </div>
-            </div>
-
-
-        </section>
-    </main>
-    <script>
-        function displayAbout(){
-            var arrow = document.getElementById('animation');
-            arrow.classList.toggle('rotate')
-            var display = document.getElementById('about');
-            display.classList.toggle('active')
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
