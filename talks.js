@@ -84,7 +84,7 @@
 
     if (statsEl) {
       var cities = {};
-      evs.forEach(function (e) { if (e.city) cities[e.city] = 1; });
+      evs.forEach(function (e) { if (e.city && e.mode !== "online") cities[e.city] = 1; });
       var slides = evs.filter(function (e) { return e.links && e.links.slides; }).length;
       statsEl.textContent = evs.length + " events · " + Object.keys(cities).length + " cities · " + slides + " decks to download";
     }
