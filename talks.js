@@ -75,12 +75,14 @@
       upcomingEl.appendChild(el("p", "empty", "No events announced right now. Want me at yours? Get in touch below."));
     }
 
-    var year = null;
-    past.forEach(function (e) {
-      var y = parse(e.date).getUTCFullYear();
-      if (y !== year) { year = y; pastEl.appendChild(el("h3", "year", String(y))); }
-      pastEl.appendChild(card(e, base));
-    });
+    if (pastEl) {
+      var year = null;
+      past.forEach(function (e) {
+        var y = parse(e.date).getUTCFullYear();
+        if (y !== year) { year = y; pastEl.appendChild(el("h3", "year", String(y))); }
+        pastEl.appendChild(card(e, base));
+      });
+    }
 
     if (statsEl) {
       var cities = {};
