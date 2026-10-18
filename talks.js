@@ -40,7 +40,7 @@
     return a;
   }
 
-  function card(ev, base) {
+  function card(ev, base, resBase) {
     var c = el("article", "event");
     c.appendChild(el("div", "event-date", fmt(ev)));
     var body = el("div", "event-body");
@@ -53,6 +53,7 @@
     var row = el("div", "event-links");
     if (links.event) row.appendChild(link(links.event, "Event page"));
     if (links.slides) row.appendChild(link(/^https?:/.test(links.slides) ? links.slides : base + links.slides, "Slides"));
+    if (links.resources) row.appendChild(link(/^https?:/.test(links.resources) ? links.resources : resBase + links.resources, "Resources"));
     if (links.recording) row.appendChild(link(links.recording, "Recording"));
     if (row.children.length) body.appendChild(row);
     c.appendChild(body);
@@ -61,6 +62,7 @@
 
   function render(data) {
     var base = data.slides_base || "";
+    var resBase = data.resources_base || "";
     var today = new Date();
     today = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
     var evs = (data.events || []).slice();
@@ -70,7 +72,7 @@
       .sort(function (a, b) { return parse(b.date) - parse(a.date); });
 
     if (upcoming.length) {
-      upcoming.forEach(function (e) { upcomingEl.appendChild(card(e, base)); });
+      upcoming.forEach(function (e) { upcomingEl.appendChild(card(e, base, resBase)); });
     } else {
       upcomingEl.appendChild(el("p", "empty", "No events announced right now. Want me at yours? Get in touch below."));
     }
@@ -80,7 +82,7 @@
       past.forEach(function (e) {
         var y = parse(e.date).getUTCFullYear();
         if (y !== year) { year = y; pastEl.appendChild(el("h3", "year", String(y))); }
-        pastEl.appendChild(card(e, base));
+        pastEl.appendChild(card(e, base, resBase));
       });
     }
 
