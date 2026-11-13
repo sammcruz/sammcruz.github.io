@@ -240,7 +240,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 .journey li > .ico { position: absolute; left: -36px; top: 0; z-index: 1; }
 .journey li.milestone > .ico { background: var(--kind); color: var(--bg); box-shadow: 0 0 0 5px var(--kind-soft); }
 .journey li.step-up::after { content: ""; position: absolute; left: -22px; top: 28px; bottom: -2px; width: 4px; border-radius: 2px; background: var(--accent); }
-.journey .chip-up { display: block; width: fit-content; margin: 4px 0 4px; padding: 1px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.78rem; font-weight: 600; }
 .journey-legend { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: -6px 0 22px; color: var(--muted); font-size: 0.92rem; }
 .journey-legend .key { display: inline-flex; align-items: center; gap: 8px; }
 .journey-legend .key.work { --kind: var(--accent); }
