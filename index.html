@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Samantha Cruz · Data engineer, team lead and speaker</title>
-  <meta name="description" content="Hi, I'm Samantha Cruz: a data engineering team lead. Lakehouse platforms, talks, teaching and writing.">
+  <title data-i18n="meta.title.home">Samantha Cruz · Data engineer, team lead and speaker</title>
+  <meta name="description" content="Hi, I'm Samantha Cruz: a data engineering team lead. Lakehouse platforms, talks, teaching and writing." data-i18n-attr="content:meta.desc.home">
   <meta property="og:title" content="Samantha Cruz · Data engineer, team lead and speaker">
   <meta property="og:description" content="lakehouse platforms, talks, teaching and writing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sammcruz.github.io/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css?v=20261113">
+  <link rel="stylesheet" href="styles.css?v=20261114">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-work" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-edu" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-sessionize" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 0c6.628 0 12 5.372 12 12v10c0 1.097-.903 2-2 2h-7.5l-.001-.169c-.049-2.894-1.347-4.902-3.709-5.96L24 12l-.32-.109c-2.858-.999-5.251-2.462-7.18-4.391-1.928-1.928-3.392-4.322-4.391-7.181L12 0 4 18c0 .667.167 1.167.5 1.5.334.334.834.5 1.5.5l.187.001c3.771.04 5.313 1.295 5.313 3.999H2c-1.097 0-2-.903-2-2V2C0 .903.903 0 2 0h10Zm7.207 4.793c-.781-.781-1.73-1.097-2.121-.707-.39.39-.074 1.34.707 2.121.781.781 1.731 1.098 2.121.707.391-.39.074-1.34-.707-2.121Z"/></symbol>
+  </svg>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="#top">Samantha Cruz</a>
-      <nav class="nav" aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="talks.html">Talks</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.main">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="talks.html" data-i18n="nav.talks">Talks</a>
+        <a href="#writing" data-i18n="nav.writing">Writing</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme" data-i18n-attr="aria-label:theme.aria">Dark mode</button>
       </nav>
     </div>
   </header>
@@ -34,22 +43,28 @@
     <div class="hero-bg">
     <div class="wrap hero hero-grid" id="top">
       <figure class="hero-photo">
-        <img src="assets/samantha.jpg" width="720" height="720" alt="Samantha smiling in a cycling helmet by the sea" fetchpriority="high">
+        <img src="assets/samantha.jpg" width="720" height="720" alt="Samantha smiling in a cycling helmet by the sea" data-i18n-attr="alt:hero.alt" fetchpriority="high">
       </figure>
       <div class="hero-text">
-      <p class="welcome">Hello, I'm Samantha 👋<span class="sam">Feel free to call me Sam.</span></p>
-      <h1 class="name">Samantha <span class="accent-text">Cruz</span></h1>
-      <p class="tagline">Data engineer · team lead · global speaker</p>
-      <p class="lead">Hi, I'm so glad you're here! I build data platforms, lead a data engineering team, teach Databricks, speak at community events and write about what I learn along the way. Look around, and say hello if something sparks an idea.</p>
+      <h1 class="welcome" data-i18n-html="hero.welcome">Hello, I'm Samantha 👋<span class="sam">Feel free to call me Sam.</span></h1>
+      <ul class="social" aria-label="Find me online" data-i18n-attr="aria-label:social.label">
+        <li><a href="mailto:samantha@poli.ufrj.br" aria-label="Email me" title="Email me" data-i18n-attr="aria-label:contact.email;title:contact.email"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/samcruzz/" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="https://sammcruz.medium.com/" aria-label="Medium" title="Medium"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-medium"/></svg></a></li>
+        <li><a href="https://github.com/sammcruz" aria-label="GitHub" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a href="https://sessionize.com/samantha-cruz" aria-label="Sessionize" title="Sessionize"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sessionize"/></svg></a></li>
+      </ul>
+      <p class="tagline" data-i18n="hero.tagline">Data engineer · team lead · global speaker</p>
+      <p class="lead" data-i18n="hero.lead">Hi, I'm so glad you're here! I build data platforms, lead a data engineering team, teach Databricks, speak at community events and write about what I learn along the way. Look around, and say hello if something sparks an idea.</p>
       <div class="cta">
-        <a class="btn" href="#about">About me</a>
-        <a class="btn ghost" href="talks.html">See my talks</a>
-        <a class="btn ghost" href="#contact">Say hello</a>
+        <a class="btn" href="#about" data-i18n="hero.cta.about">About me</a>
+        <a class="btn ghost" href="talks.html" data-i18n="hero.cta.talks">See my talks</a>
+        <a class="btn ghost" href="#contact" data-i18n="hero.cta.hello">Say hello</a>
       </div>
       <ul class="facts">
-        <li><strong>Based in Barcelona 🇪🇸 </strong></li>
-        <li><strong>8+ years</strong> in data</li>
-        <li><strong>PT · EN · ES</strong></li>
+        <li><strong data-i18n="facts.where">Based in Barcelona 🇪🇸 </strong></li>
+        <li data-i18n-html="facts.years"><strong>8+ years</strong> in data</li>
+        <li class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label"><a href="?lang=pt" hreflang="pt" lang="pt" data-lang="pt">PT</a> · <a href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a> · <a href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a></li>
       </ul>
       </div>
     </div>
@@ -57,97 +72,93 @@
 
     <section id="about">
       <div class="wrap">
-        <h2>About me</h2>
+        <h2 data-i18n="about.title">About me</h2>
         <div class="about-intro">
-          <p>I'm from Brazil. I grew up there and studied <strong>Naval and Oceanic Engineering</strong> at UFRJ in Rio de Janeiro. My career started at sea level: satellite images, ocean temperature and currents, and a research stay at NOAA in Miami. Working with all that data pulled me into analytics, BI and, in the end, data engineering.</p>
-          <p>On 2024 I moved to Barcelona, where I worked at Glovo, a food delivery app, then I worked as a data engineer at isolutions, teach Databricks, speak at conferences and meetups, and write about what I learn. This site is where it all comes together.</p>
+          <p data-i18n-html="about.p1">I'm from Brazil. I grew up there and studied <strong>Naval and Oceanic Engineering</strong> at UFRJ in Rio de Janeiro. My career started at sea level: satellite images, ocean temperature and currents, and a research stay at NOAA in Miami. Working with all that data pulled me into analytics, BI and, in the end, data engineering.</p>
+          <p data-i18n="about.p2">On 2024 I moved to Barcelona, where I worked at Glovo, a food delivery app, then I worked as a data engineer at isolutions, teach Databricks, speak at conferences and meetups, and write about what I learn. This site is where it all comes together.</p>
         </div>
 
-        <h3 class="journey-title">My journey</h3>
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-          <symbol id="i-work" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-          <symbol id="i-edu" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
-        </svg>
+        <h3 class="journey-title" data-i18n="journey.title">My journey</h3>
         <p class="journey-legend">
-          <span class="key work"><span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>Work</span>
-          <span class="key edu"><span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span>Education</span>
+          <span class="key work"><span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span><span data-i18n="legend.work">Work</span></span>
+          <span class="key edu"><span class="ico"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span><span data-i18n="legend.edu">Education</span></span>
         </p>
         <ol class="journey">
           <li class="work milestone step-up">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2026</span>
-            <div><b>Data Engineering Team Lead, isolutions</b><span class="what">Promoted to team lead. I now lead the Data Engineer team at isolutions Barcelona.</span></div>
+            <div><b data-i18n="j1.t">Data Engineering Team Lead, isolutions</b><span class="what" data-i18n="j1.w">Promoted to team lead. I now lead the Data Engineer team at isolutions Barcelona.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2025</span>
-            <div><b>Senior data engineer, isolutions</b><span class="what">Fabric and Azure platforms for enterprise customers, and my first conference and meetup talks in Barcelona, Zurich and Madrid.</span></div>
+            <div><b data-i18n="j2.t">Senior data engineer, isolutions</b><span class="what" data-i18n="j2.w">Fabric and Azure platforms for enterprise customers, and my first conference and meetup talks in Barcelona, Zurich and Madrid.</span></div>
           </li>
           <li class="work milestone">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2024</span>
-            <div><b>Senior analytics engineer, Glovo</b><span class="what">working on A/B tests that lifted GMV by 7%.</span></div>
+            <div><b data-i18n="j3.t">Senior analytics engineer, Glovo</b><span class="what" data-i18n="j3.w">working on A/B tests that lifted GMV by 7%.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2024</span>
-            <div><b>Databricks instructor</b><span class="what">Started teaching Databricks.</span></div>
+            <div><b data-i18n="j4.t">Databricks instructor</b><span class="what" data-i18n="j4.w">Started teaching Databricks.</span></div>
           </li>
           <li class="work step-up">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2023 – 2024</span>
-            <div><b>Senior data analyst, AB InBev</b><span class="what">Promoted to senior data analyst the following year.</span></div>
+            <div><b data-i18n="j5.t">Senior data analyst, AB InBev</b><span class="what" data-i18n="j5.w">Promoted to senior data analyst the following year.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2022</span>
-            <div><b>Data analyst, AB InBev</b><span class="what">The Snowflake to Azure Databricks migration, with cost analysis, plus data quality monitoring for 4 billion events a month.</span></div>
+            <div><b data-i18n="j6.t">Data analyst, AB InBev</b><span class="what" data-i18n="j6.w">The Snowflake to Azure Databricks migration, with cost analysis, plus data quality monitoring for 4 billion events a month.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2020 – 2022</span>
-            <div><b>Senior Power BI engineer, APCOA</b><span class="what">BI solutions, an enterprise data architecture and a SQL Server migration for a European parking operator. In 2022 I also finished a graduate degree in Business Intelligence, Big Data and Analytics and taught AI to law graduate students as a visiting professor.</span></div>
+            <div><b data-i18n="j7.t">Senior Power BI engineer, APCOA</b><span class="what" data-i18n="j7.w">BI solutions, an enterprise data architecture and a SQL Server migration for a European parking operator. In 2022 I also finished a graduate degree in Business Intelligence, Big Data and Analytics and taught AI to law graduate students as a visiting professor.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2020</span>
-            <div><b>Business analyst, CADS Digital, São Paulo</b><span class="what">Process automation and agile delivery for clients on low-code platforms.</span></div>
+            <div><b data-i18n="j8.t">Business analyst, CADS Digital, São Paulo</b><span class="what" data-i18n="j8.w">Process automation and agile delivery for clients on low-code platforms.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2020</span>
-            <div><b>Research visitor at NOAA, Miami</b><span class="what">Helped build a real-time data transmission pipeline for forecast models and improved how geostrophic velocity of ocean currents is calculated.</span></div>
+            <div><b data-i18n="j9.t">Research visitor at NOAA, Miami</b><span class="what" data-i18n="j9.w">Helped build a real-time data transmission pipeline for forecast models and improved how geostrophic velocity of ocean currents is calculated.</span></div>
           </li>
           <li class="work">
-            <span class="ico" role="img" aria-label="Work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
+            <span class="ico" role="img" aria-label="Work" data-i18n-attr="aria-label:legend.work"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-work"/></svg></span>
             <span class="when">2017 – 2019</span>
-            <div><b>Oceanography research at UFRJ</b><span class="what">Research intern, then data analyst and research assistant: ocean and satellite data, statistics and scientific reports.</span></div>
+            <div><b data-i18n="j10.t">Oceanography research at UFRJ</b><span class="what" data-i18n="j10.w">Research intern, then data analyst and research assistant: ocean and satellite data, statistics and scientific reports.</span></div>
           </li>
           <li class="edu">
-            <span class="ico" role="img" aria-label="Education"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span>
+            <span class="ico" role="img" aria-label="Education" data-i18n-attr="aria-label:legend.edu"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span>
             <span class="when">2012 – 2018</span>
-            <div><b>BSc in Naval and Oceanic Engineering</b><span class="what">Polytechnic School of UFRJ, Rio de Janeiro.</span></div>
+            <div><b data-i18n="j11.t">BSc in Naval and Oceanic Engineering</b><span class="what" data-i18n="j11.w">Polytechnic School of UFRJ, Rio de Janeiro.</span></div>
           </li>
           <li class="edu">
-            <span class="ico" role="img" aria-label="Education"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span>
+            <span class="ico" role="img" aria-label="Education" data-i18n-attr="aria-label:legend.edu"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-edu"/></svg></span>
             <span class="when">2010 – 2012</span>
-            <div><b>Computer technician, with a focus on data processing</b><span class="what">Federal Technology Center, Brazil. The first step into software and data.</span></div>
+            <div><b data-i18n="j12.t">Computer technician, with a focus on data processing</b><span class="what" data-i18n="j12.w">Federal Technology Center, Brazil. The first step into software and data.</span></div>
           </li>
         </ol>
 
         <div class="grid two" style="margin-top:32px">
           <article class="card">
-            <h3>Certifications</h3>
+            <h3 data-i18n="cert.title">Certifications</h3>
             <p>Microsoft Azure Databricks Data Engineer Associate<br>
                Microsoft Fabric Analytics Engineer Associate (DP-600)<br>
                Microsoft Fabric Data Engineer Associate (DP-700)<br>
                Databricks Generative AI Engineer Associate<br>
                Databricks Data Engineer Associate<br>
-               <a href="https://github.com/sammcruz/certifications">All credentials and verification links</a></p>
+               <a href="https://github.com/sammcruz/certifications" data-i18n="cert.link">All credentials and verification links</a></p>
           </article>
           <article class="card">
-            <h3>Education</h3>
-            <p>Graduate degree in Business Intelligence, Big Data and Analytics, Anhanguera University<br>
+            <h3 data-i18n="legend.edu">Education</h3>
+            <p data-i18n-html="edu.body">Graduate degree in Business Intelligence, Big Data and Analytics, Anhanguera University<br>
                BSc in Naval and Oceanic Engineering, Polytechnic School of UFRJ</p>
           </article>
         </div>
@@ -156,36 +167,36 @@
 
     <section id="work">
       <div class="wrap">
-        <h2>What I do</h2>
-        <p class="section-sub">I like building data platforms that people can trust and that I can explain, from ingestion to the dashboards and models people actually use.</p>
+        <h2 data-i18n="work.title">What I do</h2>
+        <p class="section-sub" data-i18n="work.sub">I like building data platforms that people can trust and that I can explain, from ingestion to the dashboards and models people actually use.</p>
         <div class="grid three">
           <article class="card">
-            <span class="tag">Platforms</span>
-            <h3>Lakehouse architecture</h3>
-            <p>Medallion lakehouses with PySpark and SQL on Fabric and Databricks, batch and streaming, from raw ingestion to curated, analytics-ready layers.</p>
+            <span class="tag" data-i18n="c1.tag">Platforms</span>
+            <h3 data-i18n="c1.h">Lakehouse architecture</h3>
+            <p data-i18n="c1.p">Medallion lakehouses with PySpark and SQL on Fabric and Databricks, batch and streaming, from raw ingestion to curated, analytics-ready layers.</p>
           </article>
           <article class="card">
-            <span class="tag">Trust</span>
-            <h3>Quality, lineage and governance</h3>
-            <p>Data quality monitoring, lineage tracking, row-level security and cost control, so downstream data scientists and BI analysts work on a foundation they can defend.</p>
+            <span class="tag" data-i18n="c2.tag">Trust</span>
+            <h3 data-i18n="c2.h">Quality, lineage and governance</h3>
+            <p data-i18n="c2.p">Data quality monitoring, lineage tracking, row-level security and cost control, so downstream data scientists and BI analysts work on a foundation they can defend.</p>
           </article>
           <article class="card">
-            <span class="tag">Delivery</span>
-            <h3>CI/CD and infrastructure as code</h3>
-            <p>Azure DevOps and Terraform pipelines, version-controlled deployments across dev, test and prod, automated tests and release gates.</p>
+            <span class="tag" data-i18n="c3.tag">Delivery</span>
+            <h3 data-i18n="c3.h">CI/CD and infrastructure as code</h3>
+            <p data-i18n="c3.p">Azure DevOps and Terraform pipelines, version-controlled deployments across dev, test and prod, automated tests and release gates.</p>
           </article>
         </div>
 
         <div class="grid two" style="margin-top:16px">
           <article class="card">
-            <span class="tag">Migration</span>
-            <h3>Snowflake to Azure Databricks</h3>
-            <p>Led the cost analysis of both platforms and the migration, with Azure Data Factory orchestration, ADLS storage and an executive dashboard tracking warehouse spend.</p>
+            <span class="tag" data-i18n="c4.tag">Migration</span>
+            <h3 data-i18n="c4.h">Snowflake to Azure Databricks</h3>
+            <p data-i18n="c4.p">Led the cost analysis of both platforms and the migration, with Azure Data Factory orchestration, ADLS storage and an executive dashboard tracking warehouse spend.</p>
           </article>
           <article class="card">
-            <span class="tag">Reliability</span>
-            <h3>Quality monitoring at 4 billion events a month</h3>
-            <p>Built the monitoring system and dashboard, with near real-time Slack alerts when event propagation failed.</p>
+            <span class="tag" data-i18n="c5.tag">Reliability</span>
+            <h3 data-i18n="c5.h">Quality monitoring at 4 billion events a month</h3>
+            <p data-i18n="c5.p">Built the monitoring system and dashboard, with near real-time Slack alerts when event propagation failed.</p>
           </article>
         </div>
       </div>
@@ -193,37 +204,37 @@
 
     <section id="projects">
       <div class="wrap">
-        <h2>Projects</h2>
-        <p class="section-sub">Open-source work you can read and run. Client work stays with the client, so this is where I build in the open.</p>
+        <h2 data-i18n="proj.title">Projects</h2>
+        <p class="section-sub" data-i18n="proj.sub">Open-source work you can read and run. Client work stays with the client, so this is where I build in the open.</p>
 
         <article class="featured">
-          <span class="tag" style="color:var(--accent);font-weight:600;font-size:.85rem">Flagship · open source</span>
-          <h3>jobradar: an AI data pipeline you can audit</h3>
-          <p>A small pipeline that runs on a laptop. It collects job ads from public European APIs, uses local models to classify them and extract facts, and matches them against your CV, which never leaves your machine. Every step emits OpenLineage events, every table is plain Delta Lake, and governance (data contracts, retention, privacy scrubbing, lineage-driven erasure) is built in rather than bolted on.</p>
-          <ul class="chips" aria-label="Technologies">
+          <span class="tag" style="color:var(--accent);font-weight:600;font-size:.85rem" data-i18n="feat.tag">Flagship · open source</span>
+          <h3 data-i18n="feat.h">jobradar: an AI data pipeline you can audit</h3>
+          <p data-i18n="feat.p">A small pipeline that runs on a laptop. It collects job ads from public European APIs, uses local models to classify them and extract facts, and matches them against your CV, which never leaves your machine. Every step emits OpenLineage events, every table is plain Delta Lake, and governance (data contracts, retention, privacy scrubbing, lineage-driven erasure) is built in rather than bolted on.</p>
+          <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:chips.label">
             <li>Delta Lake</li><li>OpenLineage</li><li>Marquez</li><li>DuckDB</li><li>LanceDB</li><li>Ollama</li><li>ODCS data contracts</li><li>Python</li>
           </ul>
           <div class="cta">
-            <a class="btn" href="projects/jobradar.html">Read the case study</a>
-            <a class="btn ghost" href="https://github.com/sammcruz/traceable-jobradar-poc">View on GitHub</a>
+            <a class="btn" href="projects/jobradar.html" data-i18n="feat.case">Read the case study</a>
+            <a class="btn ghost" href="https://github.com/sammcruz/traceable-jobradar-poc" data-i18n="feat.gh">View on GitHub</a>
           </div>
         </article>
 
         <div class="grid three" style="margin-top:16px">
           <article class="card">
-            <span class="tag">AI agents · open source</span>
+            <span class="tag" data-i18n="p1.tag">AI agents · open source</span>
             <h3><a href="https://github.com/sammcruz/DataEngAgents">DataEngAgents</a></h3>
-            <p>A sanitized, reusable template for running AI coding agents against Microsoft Fabric and Azure DevOps, with layered agent context and a dry-run-first safety model.</p>
+            <p data-i18n="p1.p">A sanitized, reusable template for running AI coding agents against Microsoft Fabric and Azure DevOps, with layered agent context and a dry-run-first safety model.</p>
           </article>
           <article class="card">
-            <span class="tag">Earth observation</span>
-            <h3><a href="https://github.com/sammcruz/Satellite_Imagery_Analysis">Satellite imagery analysis</a></h3>
-            <p>Scripts to acquire and process satellite image data, from my oceanography research background.</p>
+            <span class="tag" data-i18n="p2.tag">Earth observation</span>
+            <h3><a href="https://github.com/sammcruz/Satellite_Imagery_Analysis" data-i18n="p2.h">Satellite imagery analysis</a></h3>
+            <p data-i18n="p2.p">Scripts to acquire and process satellite image data, from my oceanography research background.</p>
           </article>
           <article class="card">
-            <span class="tag">Ocean data</span>
-            <h3><a href="https://github.com/sammcruz/Download_Thredds_Python">THREDDS downloader</a></h3>
-            <p>Python scripts to download and combine BRAN ocean reanalysis data from THREDDS servers.</p>
+            <span class="tag" data-i18n="p3.tag">Ocean data</span>
+            <h3><a href="https://github.com/sammcruz/Download_Thredds_Python" data-i18n="p3.h">THREDDS downloader</a></h3>
+            <p data-i18n="p3.p">Python scripts to download and combine BRAN ocean reanalysis data from THREDDS servers.</p>
           </article>
         </div>
       </div>
@@ -231,35 +242,35 @@
 
     <section id="talks">
       <div class="wrap">
-        <h2>Upcoming talks</h2>
-        <p class="section-sub">Where you can catch me next. Past talks, with slides, are on the <a href="talks.html">talks page</a>, and organisers can find my sessions on <a href="https://sessionize.com/samantha-cruz">Sessionize</a>.</p>
+        <h2 data-i18n="ht.title">Upcoming talks</h2>
+        <p class="section-sub" data-i18n-html="ht.sub">Where you can catch me next. Past talks, with slides, are on the <a href="talks.html">talks page</a>, and organisers can find my sessions on <a href="https://sessionize.com/samantha-cruz">Sessionize</a>.</p>
         <div id="upcoming-list" class="events"></div>
-        <p style="margin-top:18px"><a class="btn ghost" href="talks.html">All talks and slides</a></p>
+        <p style="margin-top:18px"><a class="btn ghost" href="talks.html" data-i18n="ht.all">All talks and slides</a></p>
       </div>
     </section>
 
     <section id="writing">
       <div class="wrap">
-        <h2>Writing</h2>
-        <p class="section-sub">Practical write-ups on <a href="https://sammcruz.medium.com/">Medium</a>, and short news notes on <a href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>.</p>
+        <h2 data-i18n="wr.title">Writing</h2>
+        <p class="section-sub" data-i18n-html="wr.sub">Practical write-ups on <a href="https://sammcruz.medium.com/">Medium</a>, and short news notes on <a href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>.</p>
         <ul class="list">
-          <li><a href="https://sammcruz.medium.com/fabric-policies-a-practical-guide-to-granular-governance-in-microsoft-fabric-388e6655c91c">Fabric Policies: A Practical Guide to Granular Governance in Microsoft Fabric</a><span class="meta">Oct 2026</span></li>
-          <li><a href="https://sammcruz.medium.com/slowly-changing-dimensions-a-complete-guide-to-all-8-types-with-examples-285e36c6bc16">Slowly Changing Dimensions: A Complete Guide to All 8 Types</a><span class="meta">Jun 2026</span></li>
-          <li><a href="https://sammcruz.medium.com/8-ways-to-make-your-github-copilot-credits-count-5cf95b439e8d">8 Ways to Make Your GitHub Copilot Credits Count</a><span class="meta">Jun 2026</span></li>
-          <li><a href="https://sammcruz.medium.com/microsoft-fabric-data-days-70cdb0076763">Microsoft Fabric Data Days</a><span class="meta">Nov 2025</span></li>
-          <li><a href="https://sammcruz.medium.com/key-metrics-to-evaluate-llms-a9f4eb19f159">Key Metrics to Evaluate LLMs</a><span class="meta">May 2025</span></li>
-          <li><a href="https://sammcruz.medium.com/sql-vs-pyspark-performance-comparison-in-databricks-216f5040e052">SQL vs PySpark: Performance Comparison in Databricks</a><span class="meta">Mar 2025</span></li>
-          <li><a href="https://sammcruz.medium.com/building-multi-stage-ai-systems-with-databricks-e3170190f39c">Building Multi-Stage AI Systems with Databricks</a><span class="meta">Feb 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/fabric-policies-a-practical-guide-to-granular-governance-in-microsoft-fabric-388e6655c91c">Fabric Policies: A Practical Guide to Granular Governance in Microsoft Fabric</a><span class="meta" data-ym="2026-10">Oct 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/slowly-changing-dimensions-a-complete-guide-to-all-8-types-with-examples-285e36c6bc16">Slowly Changing Dimensions: A Complete Guide to All 8 Types</a><span class="meta" data-ym="2026-06">Jun 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/8-ways-to-make-your-github-copilot-credits-count-5cf95b439e8d">8 Ways to Make Your GitHub Copilot Credits Count</a><span class="meta" data-ym="2026-06">Jun 2026</span></li>
+          <li><a href="https://sammcruz.medium.com/microsoft-fabric-data-days-70cdb0076763">Microsoft Fabric Data Days</a><span class="meta" data-ym="2025-11">Nov 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/key-metrics-to-evaluate-llms-a9f4eb19f159">Key Metrics to Evaluate LLMs</a><span class="meta" data-ym="2025-05">May 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/sql-vs-pyspark-performance-comparison-in-databricks-216f5040e052">SQL vs PySpark: Performance Comparison in Databricks</a><span class="meta" data-ym="2025-03">Mar 2025</span></li>
+          <li><a href="https://sammcruz.medium.com/building-multi-stage-ai-systems-with-databricks-e3170190f39c">Building Multi-Stage AI Systems with Databricks</a><span class="meta" data-ym="2025-02">Feb 2025</span></li>
         </ul>
       </div>
     </section>
 
     <section id="contact">
       <div class="wrap">
-        <h2>Get in touch</h2>
-        <p class="section-sub">Happy to talk about data strategy, architecture, Fabric or Databricks, speaking, or mentoring.</p>
+        <h2 data-i18n="contact.title">Get in touch</h2>
+        <p class="section-sub" data-i18n="contact.sub">Happy to talk about data strategy, architecture, Fabric or Databricks, speaking, or mentoring.</p>
         <div class="cta">
-          <a class="btn" href="mailto:samantha@poli.ufrj.br">Email me</a>
+          <a class="btn" href="mailto:samantha@poli.ufrj.br" data-i18n="contact.email">Email me</a>
           <a class="btn ghost" href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>
           <a class="btn ghost" href="https://github.com/sammcruz">GitHub</a>
           <a class="btn ghost" href="https://sammcruz.medium.com/">Medium</a>
@@ -272,11 +283,12 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Samantha Cruz</span>
-      <span>Built with plain HTML and CSS. Hosted on GitHub Pages.</span>
+      <span data-i18n="footer.built">Built with plain HTML and CSS. Hosted on GitHub Pages.</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="talks.js"></script>
+  <script src="i18n.js?v=20261114"></script>
+  <script src="script.js?v=20261114"></script>
+  <script src="talks.js?v=20261114"></script>
 </body>
 </html>

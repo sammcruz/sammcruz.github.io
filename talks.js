@@ -7,6 +7,14 @@
   var upcomingEl = document.getElementById("upcoming-list");
   var pastEl = document.getElementById("past-list");
   var statsEl = document.getElementById("talk-stats");
+  var lastData = null;
+  var scrolledToTabs = false;
+  var drawn = false;
+  var failed = false;
+
+  function tr(key, fallback) {
+    return window.i18n ? window.i18n.t(key, fallback) : fallback;
+  }
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -20,15 +28,19 @@
     return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2]));
   }
 
+  function day(d) {
+    var mon = window.i18n ? window.i18n.monthShort(d) : d.toLocaleDateString("en-GB", { month: "short", timeZone: "UTC" });
+    return d.getUTCDate() + " " + mon + " " + d.getUTCFullYear();
+  }
+
   function fmt(ev) {
-    var opts = { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" };
-    var s = parse(ev.date).toLocaleDateString("en-GB", opts);
+    var s = day(parse(ev.date));
     if (ev.end_date) {
       var a = parse(ev.date), b = parse(ev.end_date);
       if (a.getUTCMonth() === b.getUTCMonth() && a.getUTCFullYear() === b.getUTCFullYear()) {
-        return a.getUTCDate() + "–" + b.toLocaleDateString("en-GB", opts);
+        return a.getUTCDate() + "–" + day(b);
       }
-      return s + " – " + b.toLocaleDateString("en-GB", opts);
+      return s + " – " + day(b);
     }
     return s;
   }
@@ -46,15 +58,15 @@
     var body = el("div", "event-body");
     body.appendChild(el("h3", null, ev.event));
     if (ev.title) body.appendChild(el("p", "event-title", ev.title));
-    var meta = [ev.role, ev.with && ev.with.length ? "with " + ev.with.join(", ") : "", ev.mode === "online" ? "Online" : [ev.venue, (ev.venue && ev.city && ev.venue.indexOf(ev.city) !== -1) ? "" : ev.city, ev.country].filter(Boolean).join(", ")]
+    var meta = [ev.role ? tr("role." + ev.role, ev.role) : "", ev.with && ev.with.length ? tr("ev.with", "with") + " " + ev.with.join(", ") : "", ev.mode === "online" ? tr("ev.online", "Online") : [ev.venue, (ev.venue && ev.city && ev.venue.indexOf(ev.city) !== -1) ? "" : ev.city, ev.country].filter(Boolean).join(", ")]
       .filter(Boolean).join(" · ");
     body.appendChild(el("p", "event-meta", meta));
     var links = ev.links || {};
     var row = el("div", "event-links");
-    if (links.event) row.appendChild(link(links.event, "Event page"));
-    if (links.slides) row.appendChild(link(/^https?:/.test(links.slides) ? links.slides : base + links.slides, "Slides"));
-    if (links.resources) row.appendChild(link(/^https?:/.test(links.resources) ? links.resources : resBase + links.resources, "Resources"));
-    if (links.recording) row.appendChild(link(links.recording, "Recording"));
+    if (links.event) row.appendChild(link(links.event, tr("ev.page", "Event page")));
+    if (links.slides) row.appendChild(link(/^https?:/.test(links.slides) ? links.slides : base + links.slides, tr("ev.slides", "Slides")));
+    if (links.resources) row.appendChild(link(/^https?:/.test(links.resources) ? links.resources : resBase + links.resources, tr("ev.resources", "Resources")));
+    if (links.recording) row.appendChild(link(links.recording, tr("ev.recording", "Recording")));
     if (row.children.length) body.appendChild(row);
     c.appendChild(body);
     return c;
@@ -72,7 +84,7 @@
 
     var tablist = el("div", "tabs");
     tablist.setAttribute("role", "tablist");
-    tablist.setAttribute("aria-label", "Past events by year");
+    tablist.setAttribute("aria-label", tr("ev.tabs", "Past events by year"));
     pastEl.appendChild(tablist);
 
     var tabs = [], panels = [];
@@ -125,10 +137,20 @@
     var m = /^#year-(\d{4})$/.exec(location.hash);
     var start = m ? years.indexOf(Number(m[1])) : 0;
     select(start < 0 ? 0 : start, false);
-    if (m && start >= 0) tablist.scrollIntoView({ block: "start" });
+    if (m && start >= 0 && !scrolledToTabs) { scrolledToTabs = true; tablist.scrollIntoView({ block: "start" }); }
   }
 
   function render(data) {
+    lastData = data;
+    failed = false;
+    draw();
+  }
+
+  function draw() {
+    var data = lastData;
+    var keepY = drawn ? window.scrollY : null;
+    upcomingEl.textContent = "";
+    if (pastEl) pastEl.textContent = "";
     var base = data.slides_base || "";
     var resBase = data.resources_base || "";
     var today = new Date();
@@ -142,7 +164,7 @@
     if (upcoming.length) {
       upcoming.forEach(function (e) { upcomingEl.appendChild(card(e, base, resBase)); });
     } else {
-      upcomingEl.appendChild(el("p", "empty", "No events announced right now. Want me at yours? Get in touch below."));
+      upcomingEl.appendChild(el("p", "empty", tr("ev.empty", "No events announced right now. Want me at yours? Get in touch below.")));
     }
 
     if (pastEl) renderTabs(past, base, resBase);
@@ -151,12 +173,25 @@
       var cities = {};
       evs.forEach(function (e) { if (e.city && e.mode !== "online") cities[e.city] = 1; });
       var slides = evs.filter(function (e) { return e.links && e.links.slides; }).length;
-      statsEl.textContent = evs.length + " events · " + Object.keys(cities).length + " cities · " + slides + " decks to download";
+      statsEl.textContent = tr("ev.stats", "{events} events · {cities} cities · {decks} decks to download")
+        .replace("{events}", evs.length).replace("{cities}", Object.keys(cities).length).replace("{decks}", slides);
     }
+
+    if (keepY !== null) window.scrollTo(0, keepY);
+    drawn = true;
   }
 
   function fail() {
-    upcomingEl.appendChild(el("p", "empty", "The events list could not be loaded. You can browse everything in the talks repository on GitHub."));
+    failed = true;
+    upcomingEl.textContent = "";
+    upcomingEl.appendChild(el("p", "empty", tr("ev.fail", "The events list could not be loaded. You can browse everything in the talks repository on GitHub.")));
+  }
+
+  if (window.i18n) {
+    window.i18n.onChange(function () {
+      if (lastData) draw();
+      else if (failed) fail();
+    });
   }
 
   function load(url) {
