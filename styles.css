@@ -224,8 +224,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     radial-gradient(60% 80% at 85% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
     radial-gradient(40% 60% at 0% 100%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
 }
-.welcome { margin: 0 0 6px; font-size: 1.15rem; color: var(--accent); font-weight: 600; }
-.hero h1.name { font-size: clamp(3.2rem, 11vw, 7rem); line-height: 1; letter-spacing: -0.04em; max-width: none; margin: 0 0 14px; }
+.welcome { margin: 0 0 10px; font-size: clamp(1.4rem, 3.4vw, 2rem); line-height: 1.25; color: var(--text); font-weight: 600; letter-spacing: -0.01em; }
+.welcome .sam { display: block; margin-top: 2px; font-size: 0.68em; font-weight: 500; color: var(--accent); letter-spacing: 0; }
+.hero h1.name { font-size: clamp(2.3rem, 7vw, 4.4rem); line-height: 1; letter-spacing: -0.04em; max-width: none; margin: 0 0 14px; }
 .accent-text { color: var(--accent); }
 .tagline { font-size: clamp(1.15rem, 2.8vw, 1.6rem); margin: 0 0 18px; font-weight: 500; }
 .about-intro p { max-width: 68ch; margin: 0 0 14px; font-size: 1.1rem; }
