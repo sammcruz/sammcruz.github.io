@@ -156,9 +156,11 @@
     var today = new Date();
     today = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
     var evs = (data.events || []).slice();
-    var upcoming = evs.filter(function (e) { return parse(e.end_date || e.date) >= today; })
+    // "past": true in events.json moves an event to Past before its date has rolled over.
+    function isPast(e) { return !!e.past || parse(e.end_date || e.date) < today; }
+    var upcoming = evs.filter(function (e) { return !isPast(e); })
       .sort(function (a, b) { return parse(a.date) - parse(b.date); });
-    var past = evs.filter(function (e) { return parse(e.end_date || e.date) < today; })
+    var past = evs.filter(isPast)
       .sort(function (a, b) { return parse(b.date) - parse(a.date); });
 
     if (upcoming.length) {
