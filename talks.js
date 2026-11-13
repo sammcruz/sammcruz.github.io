@@ -45,10 +45,11 @@
     return s;
   }
 
-  function link(href, label) {
+  function link(href, label, newTab) {
     var a = el("a", "pill", label);
     a.href = href;
     a.rel = "noopener";
+    if (newTab) a.target = "_blank";
     return a;
   }
 
@@ -64,7 +65,7 @@
     var links = ev.links || {};
     var row = el("div", "event-links");
     if (links.event) row.appendChild(link(links.event, tr("ev.page", "Event page")));
-    if (links.slides) row.appendChild(link(/^https?:/.test(links.slides) ? links.slides : base + links.slides, tr("ev.slides", "Slides")));
+    if (links.slides) row.appendChild(link(/^https?:/.test(links.slides) ? links.slides : base + links.slides, tr("ev.slides", "Slides"), true));
     if (links.resources) row.appendChild(link(/^https?:/.test(links.resources) ? links.resources : resBase + links.resources, tr("ev.resources", "Resources")));
     if (links.recording) row.appendChild(link(links.recording, tr("ev.recording", "Recording")));
     if (row.children.length) body.appendChild(row);
