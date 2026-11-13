@@ -15,13 +15,17 @@
   function current() {
     return root.getAttribute("data-theme") || (systemDark() ? "dark" : "light");
   }
+  function tr(key, fallback) {
+    return window.i18n ? window.i18n.t(key, fallback) : fallback;
+  }
   function label() {
-    if (btn) btn.textContent = current() === "dark" ? "Light mode" : "Dark mode";
+    if (btn) btn.textContent = current() === "dark" ? tr("theme.light", "Light mode") : tr("theme.dark", "Dark mode");
   }
 
   var saved = stored();
   if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
   label();
+  if (window.i18n) window.i18n.onChange(label);
 
   if (btn) {
     btn.addEventListener("click", function () {

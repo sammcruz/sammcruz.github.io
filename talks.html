@@ -3,79 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Talks and events · Samantha Cruz</title>
-  <meta name="description" content="Upcoming and past talks by Samantha Cruz on Microsoft Fabric, Databricks, data agents and AI data pipelines, with slides to download.">
+  <title data-i18n="meta.title.talks">Talks and events · Samantha Cruz</title>
+  <meta name="description" content="Upcoming and past talks by Samantha Cruz on Microsoft Fabric, Databricks, data agents and AI data pipelines, with slides to download." data-i18n-attr="content:meta.desc.talks">
   <meta property="og:title" content="Talks and events · Samantha Cruz">
   <meta property="og:description" content="Upcoming and past talks on Microsoft Fabric, Databricks, data agents and AI data pipelines, with slides.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css?v=20261113">
+  <link rel="stylesheet" href="styles.css?v=20261114">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-work" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-edu" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="i-medium" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+    <symbol id="i-sessionize" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 0c6.628 0 12 5.372 12 12v10c0 1.097-.903 2-2 2h-7.5l-.001-.169c-.049-2.894-1.347-4.902-3.709-5.96L24 12l-.32-.109c-2.858-.999-5.251-2.462-7.18-4.391-1.928-1.928-3.392-4.322-4.391-7.181L12 0 4 18c0 .667.167 1.167.5 1.5.334.334.834.5 1.5.5l.187.001c3.771.04 5.313 1.295 5.313 3.999H2c-1.097 0-2-.903-2-2V2C0 .903.903 0 2 0h10Zm7.207 4.793c-.781-.781-1.73-1.097-2.121-.707-.39.39-.074 1.34.707 2.121.781.781 1.731 1.098 2.121.707.391-.39.074-1.34-.707-2.121Z"/></symbol>
+  </svg>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Samantha Cruz</a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html#about">About</a>
-        <a href="index.html#work">Work</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="talks.html" aria-current="page">Talks</a>
-        <a href="index.html#writing">Writing</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.main">
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="talks.html" aria-current="page" data-i18n="nav.talks">Talks</a>
+        <a href="index.html#writing" data-i18n="nav.writing">Writing</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="Switch colour theme" data-i18n-attr="aria-label:theme.aria">Dark mode</button>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <div class="wrap hero">
-      <p class="eyebrow">Talks and events</p>
-      <h1>Where I speak, and what I share.</h1>
-      <p class="lead">Conference talks, meetups and training on Microsoft Fabric, Databricks, data agents and AI data pipelines. Every deck I can publish is in <a href="https://github.com/sammcruz/talks">the talks repository</a>.</p>
+      <p class="eyebrow" data-i18n="tk.eyebrow">Talks and events</p>
+      <h1 data-i18n="tk.h1">Where I speak, and what I share.</h1>
+      <p class="lead" data-i18n-html="tk.lead">Conference talks, meetups and training on Microsoft Fabric, Databricks, data agents and AI data pipelines. Every deck I can publish is in <a href="https://github.com/sammcruz/talks">the talks repository</a>.</p>
       <p class="facts" id="talk-stats" style="margin-top:20px"></p>
+      <ul class="facts" style="margin-top:10px"><li class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label"><a href="?lang=pt" hreflang="pt" lang="pt" data-lang="pt">PT</a> · <a href="?lang=en" hreflang="en" lang="en" data-lang="en">EN</a> · <a href="?lang=es" hreflang="es" lang="es" data-lang="es">ES</a></li></ul>
       <div class="cta" style="margin-top:20px">
-        <a class="btn" href="#contact">Invite me to speak</a>
-        <a class="btn ghost" href="https://github.com/sammcruz/talks">All slides on GitHub</a>
-        <a class="btn ghost" href="https://sessionize.com/samantha-cruz">Speaker profile on Sessionize</a>
+        <a class="btn" href="#contact" data-i18n="tk.invite">Invite me to speak</a>
+        <a class="btn ghost" href="https://github.com/sammcruz/talks" data-i18n="tk.allslides">All slides on GitHub</a>
+        <a class="btn ghost" href="https://sessionize.com/samantha-cruz" data-i18n="tk.sessionize">Speaker profile on Sessionize</a>
       </div>
     </div>
 
     <section id="upcoming">
       <div class="wrap">
-        <h2>Upcoming</h2>
+        <h2 data-i18n="tk.upcoming">Upcoming</h2>
         <div id="upcoming-list" class="events"></div>
       </div>
     </section>
 
     <section id="past">
       <div class="wrap">
-        <h2>Past events</h2>
-        <p class="section-sub">Slides are linked where I can share them.</p>
+        <h2 data-i18n="tk.past">Past events</h2>
+        <p class="section-sub" data-i18n="tk.pastsub">Slides are linked where I can share them.</p>
         <div id="past-list" class="events"></div>
       </div>
     </section>
 
     <section id="teaching">
       <div class="wrap">
-        <h2>Teaching</h2>
-        <p class="section-sub">Since 2024 I deliver Databricks training remotely, covering:</p>
+        <h2 data-i18n="tk.teaching">Teaching</h2>
+        <p class="section-sub" data-i18n="tk.teachsub">Since 2024 I deliver Databricks training remotely, covering:</p>
         <div class="grid two">
-          <article class="card"><h3>Data engineering</h3><p>Delta Lake ingestion, Delta Live Tables pipelines, Workflows, performance optimization and advanced data engineering.</p></article>
-          <article class="card"><h3>Analytics and BI</h3><p>Data analysis, SQL analytics, dashboards and data warehousing on Databricks.</p></article>
-          <article class="card"><h3>Governance</h3><p>Data management and governance with Unity Catalog, and Databricks data privacy.</p></article>
-          <article class="card"><h3>Generative AI and ML</h3><p>Generative AI application development, deployment, monitoring, evaluation and governance, and ML model deployment.</p></article>
+          <article class="card"><h3 data-i18n="tk.de.h">Data engineering</h3><p data-i18n="tk.de.p">Delta Lake ingestion, Delta Live Tables pipelines, Workflows, performance optimization and advanced data engineering.</p></article>
+          <article class="card"><h3 data-i18n="tk.bi.h">Analytics and BI</h3><p data-i18n="tk.bi.p">Data analysis, SQL analytics, dashboards and data warehousing on Databricks.</p></article>
+          <article class="card"><h3 data-i18n="tk.gv.h">Governance</h3><p data-i18n="tk.gv.p">Data management and governance with Unity Catalog, and Databricks data privacy.</p></article>
+          <article class="card"><h3 data-i18n="tk.ai.h">Generative AI and ML</h3><p data-i18n="tk.ai.p">Generative AI application development, deployment, monitoring, evaluation and governance, and ML model deployment.</p></article>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="wrap">
-        <h2>Invite me to speak</h2>
-        <p class="section-sub">Meetups, user groups and conferences, in person or online. My full session list and abstracts are on <a href="https://sessionize.com/samantha-cruz">Sessionize</a>. I can talk about Fabric data agents, lakehouse governance and lineage, CI/CD for Fabric, Databricks Genie, and building AI data pipelines you can audit. I speak English, Spanish and Portuguese.</p>
+        <h2 data-i18n="tk.invite">Invite me to speak</h2>
+        <p class="section-sub" data-i18n-html="tk.contactsub">Meetups, user groups and conferences, in person or online. My full session list and abstracts are on <a href="https://sessionize.com/samantha-cruz">Sessionize</a>. I can talk about Fabric data agents, lakehouse governance and lineage, CI/CD for Fabric, Databricks Genie, and building AI data pipelines you can audit. I speak English, Spanish and Portuguese.</p>
         <div class="cta">
-          <a class="btn" href="mailto:samantha@poli.ufrj.br?subject=Speaking%20invitation">Email me</a>
+          <a class="btn" href="mailto:samantha@poli.ufrj.br?subject=Speaking%20invitation" data-i18n="tk.email">Email me</a>
           <a class="btn ghost" href="https://www.linkedin.com/in/samcruzz/">LinkedIn</a>
           <a class="btn ghost" href="https://sessionize.com/samantha-cruz">Sessionize</a>
         </div>
@@ -86,11 +96,12 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Samantha Cruz</span>
-      <a href="index.html">Back to home</a>
+      <a href="index.html" data-i18n="tk.back">Back to home</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="talks.js"></script>
+  <script src="i18n.js?v=20261114"></script>
+  <script src="script.js?v=20261114"></script>
+  <script src="talks.js?v=20261114"></script>
 </body>
 </html>
